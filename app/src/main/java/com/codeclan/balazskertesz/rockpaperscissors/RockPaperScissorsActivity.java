@@ -21,8 +21,14 @@ public class RockPaperScissorsActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+
         game = new Game();
+
+        if(savedInstanceState != null){
+            game.setLose(savedInstanceState.getInt("loses"));
+            game.setWins(savedInstanceState.getInt("wins"));
+            game.setDraws(savedInstanceState.getInt("draws"));
+        }
 
 
         setContentView(R.layout.activity_rock_paper_scissors);
@@ -34,6 +40,7 @@ public class RockPaperScissorsActivity extends AppCompatActivity {
         score = findViewById(R.id.scoreID);
         intent = new Intent(this, WinnerActivity.class);
 
+        super.onCreate(savedInstanceState);
 //        setButtonColors();
     }
 
