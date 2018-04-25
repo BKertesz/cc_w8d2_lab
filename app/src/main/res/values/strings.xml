@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">RockPaperScissors</string>
+    <string name="winnerActivityLabel">Winner</string>
 </resources>

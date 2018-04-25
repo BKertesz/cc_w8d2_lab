@@ -18,6 +18,30 @@ public class Game {
         draws = 0;
     }
 
+    public void setWins(int wins) {
+        this.wins = wins;
+    }
+
+    public void setLose(int lose) {
+        this.lose = lose;
+    }
+
+    public void setDraws(int draws) {
+        this.draws = draws;
+    }
+
+    public int getWins() {
+        return wins;
+    }
+
+    public int getLose() {
+        return lose;
+    }
+
+    public int getDraws() {
+        return draws;
+    }
+
     public String getPlayer() {
         return player;
     }
