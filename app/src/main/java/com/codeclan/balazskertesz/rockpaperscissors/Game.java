@@ -11,6 +11,8 @@ public class Game {
     private int draws;
 
     public Game() {
+        // This constructor sets up everything to a base zero value
+        // Without this we could create a NullPointerError
         this.player = "";
         this.computer = "";
         wins = 0;
@@ -59,9 +61,14 @@ public class Game {
     }
 
     public void randomComputerHand() {
+        //This methods set up the computers random hand
         Random rand = new Random();
+        //We create a random instance
         int number = rand.nextInt(Logic.values().length);
-        computer = Logic.values()[number].getValue();
+        //Here it creates a number which is between the values of the enum's length
+        computer = Logic.values()[number].getName();
+        //Here it gives the computer a random hand depending on the number we created earlier
+        // Using the enum as a random library
     }
 
     public String compareHands() {

@@ -24,16 +24,22 @@ public class WinnerActivity extends AppCompatActivity {
         Bundle extras = intent.getExtras();
         String winner = extras.getString("winner");
         String score = extras.getString("score");
+        //This 4 lines gets the intent
+        //Gets the winner text and score text from the intent
 
         scoreDisplay = (TextView) findViewById(R.id.winnerScoreID);
         scoreDisplay.setText(score);
+        //Sets up the score display and set the text to the score String
 
         display = (TextView) findViewById(R.id.textDisplayID);
         display.setText(winner);
+        //Sets up and displays winner text
 
     }
 
     public void goBack(View view){
+
+        //Unused method which restarts the game activity
         Intent intent = new Intent(this,RockPaperScissorsActivity.class);
         startActivity(intent);
 
