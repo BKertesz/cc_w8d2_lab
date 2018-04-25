@@ -45,6 +45,8 @@ public class RockPaperScissorsActivity extends AppCompatActivity {
 
     @Override
     public void onSaveInstanceState(Bundle savedInstanceState){
+        // This method saves data to the outside storage
+        // Gets called automatically every time app goes to other activity
         savedInstanceState.putInt("wins",game.getWins());
         savedInstanceState.putInt("loses",game.getLose());
         savedInstanceState.putInt("draws",game.getDraws());
@@ -56,6 +58,7 @@ public class RockPaperScissorsActivity extends AppCompatActivity {
     @Override
     public void onResume(){
         super.onResume();
+        // When you return to the activity it displays the score again
         score.setText(game.displayScore());
 
     }
@@ -67,6 +70,8 @@ public class RockPaperScissorsActivity extends AppCompatActivity {
 
     @Override
     public void onRestoreInstanceState(Bundle savedInstanceState) {
+        //This method loads the game score data from outside storage back to the class
+        //Gets run every time you return to the activity
         game.setDraws(savedInstanceState.getInt("draws"));
         game.setWins(savedInstanceState.getInt("wins"));
         game.setLose(savedInstanceState.getInt("loses"));
