@@ -29,6 +29,8 @@ public class RockPaperScissorsActivity extends AppCompatActivity {
             game.setWins(savedInstanceState.getInt("wins"));
             game.setDraws(savedInstanceState.getInt("draws"));
         }
+//        Here it makes sure to load back the data to the game every time its opened up
+        // If there is already an non empty savedInstanceState
 
 
         setContentView(R.layout.activity_rock_paper_scissors);

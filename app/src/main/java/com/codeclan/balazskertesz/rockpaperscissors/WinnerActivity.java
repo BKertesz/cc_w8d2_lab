@@ -40,8 +40,7 @@ public class WinnerActivity extends AppCompatActivity {
     public void goBack(View view){
 
         //Unused method which restarts the game activity
-        Intent intent = new Intent(this,RockPaperScissorsActivity.class);
-        startActivity(intent);
+        super.onBackPressed();
 
     }
 }
