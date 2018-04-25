@@ -24,12 +24,6 @@ public class RockPaperScissorsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         game = new Game();
 
-//        if(savedInstanceState != null){
-//            game.setWins(savedInstanceState.getInt("wins"));
-//            game.setLose(savedInstanceState.getInt("loses"));
-//            game.setDraws(savedInstanceState.getInt("draws"));
-//        }
-
 
         setContentView(R.layout.activity_rock_paper_scissors);
         rock = findViewById(R.id.buttonRockID);
@@ -79,18 +73,27 @@ public class RockPaperScissorsActivity extends AppCompatActivity {
 
 
     public void getPlayerHand(View view){
+        // This method set up player and computer hands
         Button button = (Button) view;
+        //Cast the view into an usable button
+        //Once the button is a Button class we get access to getText()
         game.setPlayer(button.getText().toString());
         game.randomComputerHand();
+        //Once both player and computer has a hand it jumps to the display part
         displayWinnerText();
 
     }
 
     public void displayWinnerText(){
+        //This method triggers the new activity and passes the intent into it
+
 //        display.setText(game.handsPlayedText());
         score.setText(game.displayScore());
+
+        //Here is passes the score and winner into the intent
         intent.putExtra("winner",game.handsPlayedText());
         intent.putExtra("score",game.displayScore());
+        //Starts the new activity with the extra information
         startActivity(intent);
 
     }
